@@ -1,0 +1,9 @@
+{
+  "$type": "SadConsole.SadFont, SadConsole",
+  "FilePath": "Talryth_square_15x15.png",
+  "GlyphHeight": 15,
+  "GlyphPadding": 0,
+  "GlyphWidth": 15,
+  "Name": "Talryth15",
+  "SolidGlyphIndex": 219
+}

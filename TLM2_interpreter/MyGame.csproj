@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>TLM2_interpreter</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <LangVersion>13</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Using Include="SadConsole" />
+    <Using Include="SadRogue.Primitives" />
+    <Using Include="SadConsole.Console" Alias="Console" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
+    <PackageReference Include="SadConsole.Host.MonoGame" Version="10.5.0" />
+    <PackageReference Include="SadConsole.Extended" Version="10.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Graphics\TileSets\Talryth_square_15x15.font">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Graphics\TileSets\Talryth_square_15x15.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Code\code.tlm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
