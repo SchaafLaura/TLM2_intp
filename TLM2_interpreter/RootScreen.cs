@@ -23,13 +23,12 @@ namespace TLM2_interpreter
             List<List<string>> splitFunctions = [];
 
             k = 0;
-            var kPrev = 0;
             while (k < code.Length)
             {
                 if (code[k][0] != '{')
                     throw new Exception("not a function");
 
-                kPrev = k;
+                var kPrev = k;
                 while (code[k][0] != '}')
                     k++;
 
