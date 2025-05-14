@@ -41,9 +41,7 @@ namespace TLM2_interpreter
                 splitFunctions.Add(f);
                 k++;
             }
-
             var p = new TLMProgram([.. splitFunctions.Select(f => new TLMFunction(f))]);
-
         }
     }
 }

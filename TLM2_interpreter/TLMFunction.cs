@@ -3,18 +3,17 @@ internal sealed class TLMFunction
 {
     public char Name { get; private set; }
     public List<char> Modifiers { get; private set; }
-
-    private string rawSignature;
-    private List<string> rawBody;
-
+    
+    private string _rawSignature;
+    private Block _body;
     public TLMFunction(List<string> sourceCode)
     {
         // signature
-        rawSignature = sourceCode[0][1..];
-        Name = rawSignature[0];
-        Modifiers = [.. rawSignature[2..^1]];
+        _rawSignature = sourceCode[0][1..];
+        Name = _rawSignature[0];
+        Modifiers = [.. _rawSignature[2..^1]];
 
         // body
-        rawBody = sourceCode[1..^1];
+        _body = new Block(sourceCode[1..^1]);
     }
 }
