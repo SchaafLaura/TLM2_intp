@@ -7,6 +7,6 @@ internal static class Util
         var ret = "";
         foreach (var str in strings)
             ret += str + slash;
-        return ret.Substring(0, ret.Length - 1);
+        return ret[..^1];
     }
 }

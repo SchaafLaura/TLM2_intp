@@ -2,10 +2,13 @@
 internal sealed class TLMFunction
 {
     public char Name { get; private set; }
-    public List<char> Modifiers { get; private set; }
-    
+    public List<char> Modifiers { get; private set; }    
     private string _rawSignature;
     private Block _body;
+    
+    private Point inst = (-1, 0);
+    private Point flow = ( 1, 0);
+
     public TLMFunction(List<string> sourceCode)
     {
         // signature
@@ -15,5 +18,13 @@ internal sealed class TLMFunction
 
         // body
         _body = new Block(sourceCode[1..^1]);
+    }
+    public char GetInstruction()
+    {
+        return rawBody[inst.X][inst.Y];
+    }
+    public void Step()
+    {
+        inst += flow;
     }
 }

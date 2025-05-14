@@ -5,13 +5,12 @@ Settings.WindowTitle = "TLM2Intp";
 
 var fontPath = Util.ConcatWithSystemPathSeparator(".", "Assets", "Graphics", "TileSets", "Talryth_square_15x15.font");
 
-Builder gameStartup = new Builder()
+var gameStartup = new Builder()
     .ConfigureFonts(fontPath)
     .SetScreenSize(GameSettings.GAME_WIDTH, GameSettings.GAME_HEIGHT)
     .SetStartingScreen<TLM2_interpreter.RootScreen>()
     .IsStartingScreenFocused(true)
-    .OnStart(OnStartup)
-    ;
+    .OnStart(OnStartup);
 
 Game.Create(gameStartup);
 Game.Instance.Run();

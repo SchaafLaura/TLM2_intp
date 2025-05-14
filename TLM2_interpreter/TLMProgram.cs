@@ -1,20 +1,20 @@
-﻿using Point = System.Drawing.Point;
-
-namespace TLM2_interpreter;
-internal sealed class TLMProgram
+﻿namespace TLM2_interpreter;
+internal sealed class TLMProgram(List<TLMFunction> functions)
 {
-    private TLMProgram parent;
-    private TLMProgram child;
-    private Point inst;
-    private Point flow;
-    private List<TLMFunction> functions;
-
-    public TLMProgram(List<TLMFunction> functions)
+    private Dictionary<char, TLMFunction> funcDict = functions.ToDictionary(f => f.Name);
+    private TLMFunction currentFunction = functions[0];
+    
+    private TLMProgram? parent;
+    private TLMProgram? child;
+    
+    public void Step()
     {
-        this.functions = functions;
+        currentFunction.Step();
+        var i = currentFunction.GetInstruction();
+        
+        // convert to actual instruction
+        
+        // execute instructions
+
     }
-
-
-
-
 }
