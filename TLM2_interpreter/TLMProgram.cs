@@ -1,16 +1,16 @@
 ﻿namespace TLM2_interpreter;
 internal sealed class TLMProgram(List<TLMFunction> functions)
 {
-    private Dictionary<char, TLMFunction> funcDict = functions.ToDictionary(f => f.Name);
-    private TLMFunction currentFunction = functions[0];
+    private Dictionary<char, TLMFunction> _funcDict = functions.ToDictionary(f => f.Name);
+    private TLMFunction _currentFunction = functions[0];
     
-    private TLMProgram? parent;
-    private TLMProgram? child;
+    private TLMProgram? _parent;
+    private TLMProgram? _child;
     
     public void Step()
     {
-        currentFunction.Step();
-        var i = currentFunction.GetInstruction();
+        _currentFunction.Step();
+        var i = _currentFunction.CurrentInstruction;
         
         // convert to actual instruction
         

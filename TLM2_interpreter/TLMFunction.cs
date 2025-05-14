@@ -6,8 +6,8 @@ internal sealed class TLMFunction
     private string _rawSignature;
     private Block _body;
     
-    private Point inst = (-1, 0);
-    private Point flow = ( 1, 0);
+    private Point _ptr = (-1, 0);
+    private Point _flw = ( 1, 0);
 
     public TLMFunction(List<string> sourceCode)
     {
@@ -19,12 +19,9 @@ internal sealed class TLMFunction
         // body
         _body = new Block(sourceCode[1..^1]);
     }
-    public char GetInstruction()
-    {
-        return rawBody[inst.X][inst.Y];
-    }
+    public char CurrentInstruction => _body[_ptr];
     public void Step()
     {
-        inst += flow;
+        _ptr += _flw;
     }
 }

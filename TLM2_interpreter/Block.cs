@@ -2,6 +2,12 @@ namespace TLM2_interpreter;
 internal sealed class Block
 {
     private char[][] _data;
+
+    public char this[Point p]
+    {
+        get => this[p.X, p.Y];
+        set => this[p.X, p.Y] = value;
+    }
     public char this[int i, int j]
     {
         get => _data[i][j];
