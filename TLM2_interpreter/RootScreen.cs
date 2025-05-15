@@ -34,12 +34,13 @@ namespace TLM2_interpreter
 
                 var f = new List<string>();
 
-                for(int i = kPrev; i <= k; i++)
+                for(var i = kPrev; i <= k; i++)
                     f.Add(code[i]);
 
                 splitFunctions.Add(f);
                 k++;
             }
+            
             var p = new TLMProgram([.. splitFunctions.Select(f => new TLMFunction(f))]);
         }
     }

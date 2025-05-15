@@ -14,6 +14,9 @@ internal sealed class Block
         set => _data[i][j] = value;
     }
 
+    public char[] this[int i, Range r] => _data[i][r];
+    public char[][] this[Range r] => _data[r];
+
     public Block(Point size) : this(size.X, size.Y) { }
     public Block(int w, int h)
     {
